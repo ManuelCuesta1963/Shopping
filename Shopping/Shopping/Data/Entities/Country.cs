@@ -4,6 +4,7 @@ namespace Shopping.Data.Entities
 {
     public class Country
     {
+        
         public int Id { get; set; }
 
         [Display(Name ="País")]
