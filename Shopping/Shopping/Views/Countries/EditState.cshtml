@@ -1,4 +1,4 @@
-﻿@model Shopping.Data.Entities.Country
+﻿@model Shopping.Models.StateViewModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -7,18 +7,19 @@
 
 <h1>Editar</h1>
 
-<h4>País</h4>
+<h4>Departamento/Estados</h4>
 <hr />
 <div class="row">
     <div class="col-md-6">
-        <form asp-action="Edit">
+        <form asp-action="EditState">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <partial name="_Country" />
+             <input type="hidden" asp-for="CountryId" />
+            <partial name="_State" />
 
             <div class="form-group mt-2">
                 <input type="submit" value="Editar" class="btn btn-primary" />
-                <a asp-action="Index" class="btn btn-success">Regresar</a>
+                <a asp-action="Details" asp-route-id="@Model.CountryId" class="btn btn-success">Regresar</a>
             </div>
         </form>
     </div>
